@@ -1,6 +1,6 @@
 Name:		om-camera
 Summary:	PinePhone Camera viewer
-Version:	0.0.1
+Version:	0.0.2
 Release:	1
 License:	GPLv3
 Source0:	https://github.com/OpenMandrivaSoftware/om-camera/archive/%{version}/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	qmake5
+BuildRequires:	pkgconfig(mpv)
 
 %description
 PinePhone camera
@@ -23,18 +24,11 @@ PinePhone camera
 
 %build
 %ninja_build -C build
-cp build/src/camera cameraf
-sed -i -e 's,front,rear,g' src/CameraWidget.cpp
-%ninja_build -C build
 
 %install
 %ninja_install -C build
-cp -a cameraf %{buildroot}%{_bindir}
-sed -e 's,Camera$,Camera (Front),g;s,/camera,/cameraf,g' %{buildroot}%{_datadir}/applications/ch.lindev.camera.desktop >%{buildroot}%{_datadir}/applications/ch.lindev.camera.front.desktop
 
 %files
 %{_bindir}/camera
-%{_bindir}/cameraf
 %{_datadir}/applications/ch.lindev.camera.desktop
-%{_datadir}/applications/ch.lindev.camera.front.desktop
 %{_datadir}/icons/hicolor/scalable/apps/ch.lindev.camera.svg
