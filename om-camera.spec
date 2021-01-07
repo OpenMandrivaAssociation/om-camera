@@ -1,6 +1,6 @@
 Name:		om-camera
 Summary:	PinePhone Camera viewer
-Version:	0.0.2
+Version:	0.0.3
 Release:	1
 License:	GPLv3
 Source0:	https://github.com/OpenMandrivaSoftware/om-camera/archive/%{version}/%{name}-%{version}.tar.gz
