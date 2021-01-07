@@ -9,6 +9,7 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5DBus)
+BuildRequires:	cmake(Qt5OpenGL)
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	qmake5
