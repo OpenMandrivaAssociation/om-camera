@@ -12,6 +12,7 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	qmake5
+BuildRequires:	mpv
 Requires:	mpv
 Requires:	ffmpeg
 # for arecord
